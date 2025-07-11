@@ -3,7 +3,6 @@ import itertools
 
 all_domains = [1, 2, 3, 4, 5]
 train_combinations = list(itertools.combinations(all_domains, 2))
-train_combinations = train_combinations[1:]
 
 for train_domains in train_combinations:
     train_set = set(train_domains)
@@ -17,7 +16,7 @@ for train_domains in train_combinations:
         "python", "main_adain.py",
         "--output-dir", output_dir,
         "--models", "graph_transformer",
-        "--data-path", "/root/autodl-tmp/processed_data/bpi15.csv",
+        "--data-path", "processed_data/bpi15.csv",
         "--train-domains"
     ] + train_domains_str + [
         "--val-domains"
